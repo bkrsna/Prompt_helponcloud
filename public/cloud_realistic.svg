@@ -1,0 +1,43 @@
+<svg width="600" height="400" viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="cloud-blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="20" />
+    </filter>
+    <filter id="cloud-inner-blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="10" />
+    </filter>
+    <linearGradient id="cloud-grad-1" x1="300" y1="100" x2="300" y2="350" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFFFFF" />
+      <stop offset="1" stop-color="#FCE7F3" />
+    </linearGradient>
+    <radialGradient id="cloud-grad-2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(300 200) rotate(90) scale(150)">
+      <stop offset="0" stop-color="#FFFFFF" />
+      <stop offset="1" stop-color="#FBCFE8" stop-opacity="0.8" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Base Soft Layer -->
+  <g opacity="0.6" filter="url(#cloud-blur)">
+    <circle cx="200" cy="250" r="80" fill="#FCE7F3" />
+    <circle cx="300" cy="220" r="100" fill="#FCE7F3" />
+    <circle cx="400" cy="250" r="80" fill="#FCE7F3" />
+    <circle cx="250" cy="280" r="70" fill="#DB2777" fill-opacity="0.2" />
+    <circle cx="350" cy="280" r="70" fill="#DB2777" fill-opacity="0.2" />
+  </g>
+
+  <!-- Main Body Layer -->
+  <g filter="url(#cloud-inner-blur)">
+    <circle cx="180" cy="240" r="60" fill="url(#cloud-grad-1)" />
+    <circle cx="250" cy="200" r="80" fill="url(#cloud-grad-1)" />
+    <circle cx="350" cy="190" r="90" fill="url(#cloud-grad-1)" />
+    <circle cx="440" cy="230" r="70" fill="url(#cloud-grad-1)" />
+    <circle cx="300" cy="260" r="80" fill="url(#cloud-grad-1)" />
+  </g>
+  
+  <!-- Highlights -->
+  <g opacity="0.9">
+    <circle cx="250" cy="200" r="60" fill="url(#cloud-grad-2)" />
+    <circle cx="350" cy="190" r="70" fill="url(#cloud-grad-2)" />
+    <circle cx="420" cy="230" r="50" fill="url(#cloud-grad-2)" />
+  </g>
+</svg>

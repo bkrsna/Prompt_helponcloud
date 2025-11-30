@@ -24,7 +24,7 @@ export default function Footer() {
                                 </div>
                             </div>
                             <span className="text-xl font-bold text-white tracking-tight relative z-10">
-                                CloudScale
+                                HelpOnCloud
                             </span>
                         </Link>
                         <p className="text-slate-400 mb-6 leading-relaxed">
@@ -92,7 +92,7 @@ export default function Footer() {
 
                 <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 mb-12">
                     <p className="text-slate-500 text-sm">
-                        © {new Date().getFullYear()} CloudScale Inc. All rights reserved.
+                        © {new Date().getFullYear()} HelpOnCloud Inc. All rights reserved.
                     </p>
                     <div className="flex gap-6 text-sm text-slate-500">
                         <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
@@ -103,7 +103,7 @@ export default function Footer() {
                 {/* Massive Footer Logo */}
                 <div className="flex justify-center items-center opacity-10 select-none pointer-events-none">
                     <h1 className="text-[12vw] font-bold text-white tracking-tighter leading-none">
-                        CloudScale
+                        HelpOnCloud
                     </h1>
                 </div>
             </div>

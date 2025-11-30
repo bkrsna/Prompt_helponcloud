@@ -13,8 +13,43 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "CloudScale | Managed Cloud Hosting for Startups",
-  description: "Expert cloud hosting management for growing startups. Scalable, secure, and optimized.",
+  title: "HelpOnCloud | Managed Cloud Hosting for Startups",
+  description: "Expert cloud hosting management for growing startups. Scalable, secure, and optimized infrastructure so you can focus on code.",
+  keywords: ["cloud hosting", "managed cloud", "startup infrastructure", "AWS management", "DevOps", "HelpOnCloud"],
+  authors: [{ name: "HelpOnCloud Team" }],
+  openGraph: {
+    title: "HelpOnCloud | Managed Cloud Hosting for Startups",
+    description: "Expert cloud hosting management for growing startups. Scalable, secure, and optimized.",
+    url: "https://helponcloud.com",
+    siteName: "HelpOnCloud",
+    images: [
+      {
+        url: "/og-image.png", // Assuming we might add this later or it exists
+        width: 1200,
+        height: 630,
+        alt: "HelpOnCloud - Managed Cloud Hosting",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "HelpOnCloud | Managed Cloud Hosting for Startups",
+    description: "Expert cloud hosting management for growing startups. Scalable, secure, and optimized.",
+    images: ["/og-image.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({

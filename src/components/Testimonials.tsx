@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Star } from "lucide-react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
@@ -9,14 +10,14 @@ const testimonials = [
         name: "Sarah Chen",
         role: "CTO at TechFlow",
         image: "https://i.pravatar.cc/150?u=sarah",
-        content: "CloudScale has been a game changer for us. We reduced our AWS bill by 30% and haven't had a single downtime incident since switching.",
+        content: "HelpOnCloud has been a game changer for us. We reduced our AWS bill by 30% and haven't had a single downtime incident since switching.",
         stars: 5,
     },
     {
         name: "Michael Ross",
         role: "Founder of StartupX",
         image: "https://i.pravatar.cc/150?u=michael",
-        content: "The peace of mind is worth every penny. I used to wake up at 3 AM to fix server issues. Now I sleep soundly knowing CloudScale has it covered.",
+        content: "The peace of mind is worth every penny. I used to wake up at 3 AM to fix server issues. Now I sleep soundly knowing HelpOnCloud has it covered.",
         stars: 5,
     },
     {
@@ -51,7 +52,7 @@ const testimonials = [
         name: "Alex Thompson",
         role: "DevOps Lead at FinTech Solutions",
         image: "https://i.pravatar.cc/150?u=alex",
-        content: "Security compliance was our biggest headache. CloudScale's SOC2 ready infrastructure saved us months of work.",
+        content: "Security compliance was our biggest headache. HelpOnCloud's SOC2 ready infrastructure saved us months of work.",
         stars: 5,
     },
     {
@@ -88,9 +89,11 @@ function TestimonialCard({ testimonial }: { testimonial: typeof testimonials[0] 
             </p>
             <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-full bg-slate-100 overflow-hidden shrink-0">
-                    <img
+                    <Image
                         src={testimonial.image}
                         alt={testimonial.name}
+                        width={48}
+                        height={48}
                         className="w-full h-full object-cover"
                     />
                 </div>

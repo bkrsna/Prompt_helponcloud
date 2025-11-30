@@ -38,7 +38,7 @@ export default function WhyUs() {
                             className="text-3xl md:text-4xl font-bold text-slate-900 mb-8 tracking-tight"
                         >
                             Why High-Growth Startups <br />
-                            <span className="text-gradient">Choose CloudScale</span>
+                            <span className="text-gradient">Choose HelpOnCloud</span>
                         </motion.h2>
                         <motion.p
                             initial={{ opacity: 0, x: -20 }}

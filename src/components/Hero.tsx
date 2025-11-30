@@ -23,21 +23,24 @@ export default function Hero() {
                 style={{ y, opacity }}
                 className="absolute inset-0 z-0"
             >
-                <div
-                    className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40"
-                    style={{ backgroundImage: "url('/hero-bg.png')" }}
+                <Image
+                    src="/hero-bg.png"
+                    alt="Hero Background"
+                    fill
+                    priority
+                    className="object-cover opacity-40"
+                    quality={90}
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/50 to-white" />
             </motion.div>
 
             {/* Floating Elements - Figma-like decorations */}
             <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-                {/* Drifting Clouds */}
-                <FloatingCloud delay={0} duration={25} x="5%" y="10%" scale={0.6} opacity={0.8} />
-                <FloatingCloud delay={5} duration={30} x="85%" y="15%" scale={0.8} opacity={0.7} />
-                <FloatingCloud delay={2} duration={22} x="10%" y="60%" scale={0.5} opacity={0.6} />
-                <FloatingCloud delay={8} duration={28} x="80%" y="70%" scale={0.7} opacity={0.8} />
-                <FloatingCloud delay={12} duration={30} x="45%" y="85%" scale={0.4} opacity={0.5} />
+                {/* Realistic Floating Clouds */}
+                <FloatingCloud delay={0} duration={40} x="5%" y="15%" scale={0.9} opacity={0.9} />
+                <FloatingCloud delay={5} duration={45} x="75%" y="10%" scale={1.1} opacity={0.8} />
+                <FloatingCloud delay={2} duration={35} x="15%" y="65%" scale={0.7} opacity={0.6} />
+                <FloatingCloud delay={8} duration={50} x="85%" y="60%" scale={0.8} opacity={0.7} />
 
                 {/* Thunder Animation */}
                 <ThunderIcon delay={3} x="15%" y="18%" scale={1} />
@@ -51,6 +54,22 @@ export default function Hero() {
 
             <div className="container mx-auto px-6 md:px-8 relative z-10">
                 <div className="max-w-4xl mx-auto text-center">
+                    <motion.div
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: 0.1 }}
+                        className="mb-6"
+                    >
+                        <a
+                            href="https://bkrsna.dev/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-sm font-medium text-slate-500 hover:text-pink-600 transition-colors"
+                        >
+                            Design made by https://bkrsna.dev/
+                        </a>
+                    </motion.div>
+
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
@@ -164,10 +183,10 @@ function FloatingCloud({ delay, duration, x, y, scale, opacity }: { delay: numbe
             }}
         >
             <Image
-                src="/cloud_v2.svg"
+                src="/cloud_realistic.svg"
                 alt="Cloud"
-                width={300}
-                height={200}
+                width={400}
+                height={260}
                 className="w-auto h-auto"
             />
         </motion.div>

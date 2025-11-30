@@ -74,7 +74,7 @@ export default function Navbar() {
                                     <Cloud className="w-6 h-6 text-white" />
                                 </div>
                                 <span className="text-xl font-bold text-slate-900 tracking-tight">
-                                    CloudScale
+                                    HelpOnCloud
                                 </span>
                             </Link>
                         </motion.div>
