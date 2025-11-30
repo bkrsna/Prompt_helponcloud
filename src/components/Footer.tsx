@@ -32,13 +32,13 @@ export default function Footer() {
                             Scale without limits.
                         </p>
                         <div className="flex gap-4">
-                            <Link href="#" className="text-slate-400 hover:text-white transition-colors">
+                            <Link href="#" className="text-slate-400 hover:text-white transition-colors" aria-label="Twitter">
                                 <Twitter className="w-5 h-5" />
                             </Link>
-                            <Link href="#" className="text-slate-400 hover:text-white transition-colors">
+                            <Link href="#" className="text-slate-400 hover:text-white transition-colors" aria-label="GitHub">
                                 <Github className="w-5 h-5" />
                             </Link>
-                            <Link href="#" className="text-slate-400 hover:text-white transition-colors">
+                            <Link href="#" className="text-slate-400 hover:text-white transition-colors" aria-label="LinkedIn">
                                 <Linkedin className="w-5 h-5" />
                             </Link>
                         </div>
@@ -94,7 +94,7 @@ export default function Footer() {
                     <p className="text-slate-500 text-sm">
                         © {new Date().getFullYear()} HelpOnCloud Inc. All rights reserved.
                     </p>
-                    <div className="flex gap-6 text-sm text-slate-500">
+                    <div className="flex gap-6 text-sm text-slate-400">
                         <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
                         <Link href="#" className="hover:text-white transition-colors">Terms of Service</Link>
                     </div>

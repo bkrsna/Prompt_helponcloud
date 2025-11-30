@@ -17,22 +17,40 @@ const navLinks = [
 export default function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [isVisible, setIsVisible] = useState(true);
+    const [lastScrollY, setLastScrollY] = useState(0);
 
     useEffect(() => {
         const handleScroll = () => {
-            setIsScrolled(window.scrollY > 20);
+            const currentScrollY = window.scrollY;
+
+            // Determine if scrolled for styling
+            setIsScrolled(currentScrollY > 20);
+
+            // Determine visibility based on scroll direction
+            if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                // Scrolling down & past threshold -> hide
+                setIsVisible(false);
+            } else {
+                // Scrolling up -> show
+                setIsVisible(true);
+            }
+
+            setLastScrollY(currentScrollY);
         };
+
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+    }, [lastScrollY]);
 
     return (
         <>
             <motion.nav
                 initial={false}
-                animate={isScrolled ? "scrolled" : "top"}
+                animate={!isVisible ? "hidden" : (isScrolled ? "scrolled" : "top")}
                 variants={{
                     top: {
+                        y: 0,
                         width: "calc(100% - 28px)",
                         top: 14,
                         borderRadius: "12px",
@@ -44,6 +62,7 @@ export default function Navbar() {
                         x: "-50%",
                     },
                     scrolled: {
+                        y: 0,
                         width: "fit-content",
                         minWidth: "500px",
                         top: 20,
@@ -56,8 +75,21 @@ export default function Navbar() {
                         x: "-50%",
                         boxShadow: "0 4px 20px 0 rgba(0, 0, 0, 0.05)",
                     },
+                    hidden: {
+                        y: "-100%",
+                        width: "fit-content",
+                        minWidth: "500px",
+                        top: 20,
+                        borderRadius: "6px",
+                        backgroundColor: "rgba(255, 255, 255, 0.8)",
+                        backdropFilter: "blur(16px) saturate(180%)",
+                        border: "1px solid rgba(255, 255, 255, 0.4)",
+                        padding: "8px 24px",
+                        left: "50%",
+                        x: "-50%",
+                    }
                 }}
-                transition={{ duration: 0.4, ease: "easeInOut" }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
                 className="fixed z-50 flex items-center justify-between"
             >
                 <AnimatePresence>
@@ -117,6 +149,7 @@ export default function Navbar() {
                 <button
                     className="md:hidden p-2 text-slate-600 hover:text-pink-600"
                     onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                    aria-label="Toggle menu"
                 >
                     {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
                 </button>

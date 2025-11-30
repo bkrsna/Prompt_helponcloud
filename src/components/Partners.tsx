@@ -29,7 +29,7 @@ export default function Partners() {
                     {[...partners, ...partners, ...partners].map((partner, index) => (
                         <div
                             key={index}
-                            className="mx-8 md:mx-16 text-2xl font-bold text-slate-400 hover:text-pink-600 transition-colors cursor-default"
+                            className="mx-8 md:mx-16 text-2xl font-bold text-slate-500 hover:text-pink-600 transition-colors cursor-default"
                         >
                             {partner}
                         </div>
@@ -40,7 +40,7 @@ export default function Partners() {
                     {[...partners, ...partners, ...partners].map((partner, index) => (
                         <div
                             key={index}
-                            className="mx-8 md:mx-16 text-2xl font-bold text-slate-400 hover:text-pink-600 transition-colors cursor-default"
+                            className="mx-8 md:mx-16 text-2xl font-bold text-slate-500 hover:text-pink-600 transition-colors cursor-default"
                         >
                             {partner}
                         </div>

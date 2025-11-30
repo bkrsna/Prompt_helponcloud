@@ -30,6 +30,7 @@ export default function Hero() {
                     priority
                     className="object-cover opacity-40"
                     quality={90}
+                    sizes="100vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/50 to-white" />
             </motion.div>

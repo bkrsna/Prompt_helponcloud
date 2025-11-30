@@ -71,6 +71,7 @@ export default function Pricing() {
                         <button
                             onClick={() => setIsYearly(!isYearly)}
                             className="relative w-16 h-8 rounded-full bg-slate-200 transition-colors focus:outline-none"
+                            aria-label="Toggle yearly billing"
                         >
                             <div
                                 className={cn(
