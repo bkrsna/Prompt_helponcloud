@@ -38,6 +38,10 @@
   --radius: 0.5rem;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--background);
   color: var(--foreground);

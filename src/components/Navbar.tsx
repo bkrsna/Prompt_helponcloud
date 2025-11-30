@@ -28,11 +28,12 @@ export default function Navbar() {
             setIsScrolled(currentScrollY > 20);
 
             // Determine visibility based on scroll direction
-            if (currentScrollY > lastScrollY && currentScrollY > 100) {
+            // Only hide on mobile (width < 768px)
+            if (window.innerWidth < 768 && currentScrollY > lastScrollY && currentScrollY > 100) {
                 // Scrolling down & past threshold -> hide
                 setIsVisible(false);
             } else {
-                // Scrolling up -> show
+                // Scrolling up OR desktop -> show
                 setIsVisible(true);
             }
 
