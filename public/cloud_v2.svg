@@ -1,0 +1,34 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cloudBody" x1="256" y1="100" x2="256" y2="400" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff" />
+      <stop offset="1" stop-color="#fce7f3" />
+    </linearGradient>
+    <radialGradient id="cloudShadow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(256 350) rotate(90) scale(150 250)">
+      <stop offset="0" stop-color="#db2777" stop-opacity="0.2" />
+      <stop offset="1" stop-color="#db2777" stop-opacity="0" />
+    </radialGradient>
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="10" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="innerShadow" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="blur"/>
+        <feOffset dx="2" dy="4" result="offsetBlur"/>
+        <feComposite in="offsetBlur" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowDiff"/>
+        <feFlood flood-color="#fbcfe8" flood-opacity="0.5"/>
+        <feComposite in2="shadowDiff" operator="in"/>
+        <feComposite in2="SourceGraphic" operator="over" />
+    </filter>
+  </defs>
+  
+  <g filter="url(#softGlow)">
+      <!-- Main Cloud Shape -->
+      <path d="M400 280C400 335.228 355.228 380 300 380H140C95.8172 380 60 344.183 60 300C60 260.654 88.4176 227.943 125.805 221.494C129.58 172.066 171.096 132 220 132C259.638 132 294.555 156.815 311.166 191.812C317.077 190.634 323.197 190 329.5 190C368.436 190 400 221.564 400 260.5V280Z" fill="url(#cloudBody)" />
+      
+      <!-- Subtle Highlights -->
+      <circle cx="220" cy="180" r="60" fill="white" fill-opacity="0.3" />
+      <circle cx="320" cy="240" r="50" fill="white" fill-opacity="0.2" />
+      <circle cx="130" cy="280" r="40" fill="white" fill-opacity="0.2" />
+  </g>
+</svg>
